@@ -155,7 +155,7 @@ export default function Home() {
                   </svg>
                 </a>
                 {/* 2. 인스타그램 링크 수정 */}
-                <a href="https://instagram.com/YOUR_USERNAME" className="w-10 h-10 bg-gray-800 hover:bg-orange-500 rounded-lg flex items-center justify-center transition-colors">
+                <a href="https://instagram.com/recipe_911" className="w-10 h-10 bg-gray-800 hover:bg-orange-500 rounded-lg flex items-center justify-center transition-colors">
                 {/* ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
                              위의 #을 실제 인스타그램 주소로 바꾸세요. */}
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
