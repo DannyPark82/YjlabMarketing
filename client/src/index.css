@@ -1,0 +1,333 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(20, 90%, 48%);
+  --primary-foreground: hsl(60, 9.1%, 97.8%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* YJLAB Brand Colors */
+  --brand-orange: hsl(20, 90%, 48%);
+  --brand-orange-light: hsl(20, 90%, 60%);
+  --brand-orange-dark: hsl(20, 90%, 40%);
+  --brand-teal: hsl(174, 72%, 56%);
+  --brand-teal-light: hsl(174, 72%, 70%);
+  --brand-teal-dark: hsl(174, 72%, 40%);
+  --brand-dark: hsl(0, 0%, 10%);
+  --brand-gray: hsl(220, 13%, 91%);
+  --brand-gray-dark: hsl(220, 13%, 20%);
+  
+  /* Korean typography support */
+  --font-korean: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --font-english: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(20, 90%, 48%);
+  --primary-foreground: hsl(60, 9.1%, 97.8%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  
+  /* Dark mode brand colors */
+  --brand-orange: hsl(20, 90%, 55%);
+  --brand-teal: hsl(174, 72%, 60%);
+  --brand-dark: hsl(0, 0%, 95%);
+  --brand-gray: hsl(220, 13%, 15%);
+  --brand-gray-dark: hsl(220, 13%, 85%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: var(--font-korean);
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Korean typography optimizations */
+  .font-korean {
+    font-family: var(--font-korean);
+    word-break: keep-all;
+    word-wrap: break-word;
+  }
+
+  .font-english {
+    font-family: var(--font-english);
+  }
+
+  /* Enhanced typography for headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-korean);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  /* Bold, confident styling */
+  .font-black {
+    font-weight: 900;
+    letter-spacing: -0.05em;
+  }
+
+  /* Enhanced focus states */
+  *:focus-visible {
+    outline: 2px solid var(--brand-orange);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(220, 13%, 95%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(220, 13%, 75%);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(220, 13%, 65%);
+  }
+
+  /* Smooth animations */
+  .transition-colors {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+
+  /* Professional gradient backgrounds */
+  .gradient-orange {
+    background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-dark) 100%);
+  }
+
+  .gradient-teal {
+    background: linear-gradient(135deg, var(--brand-teal) 0%, var(--brand-teal-dark) 100%);
+  }
+
+  .gradient-dark {
+    background: linear-gradient(135deg, var(--brand-dark) 0%, hsl(0, 0%, 20%) 100%);
+  }
+
+  /* Button enhancements */
+  .btn-primary {
+    background: var(--brand-orange);
+    color: white;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    transform: translateY(0);
+  }
+
+  .btn-primary:hover {
+    background: var(--brand-orange-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Card shadows */
+  .card-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .card-shadow-lg {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Line clamp utilities */
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  /* Loading animation */
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Mobile-first responsive design */
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    h1 {
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      line-height: 1.3;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    :root {
+      --brand-orange: hsl(20, 100%, 40%);
+      --brand-teal: hsl(174, 100%, 35%);
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .hero-text {
+    @apply text-5xl md:text-7xl font-black leading-tight;
+    background: linear-gradient(135deg, white 0%, hsl(0, 0%, 85%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-black mb-6;
+  }
+
+  .card-interactive {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+
+  .btn-gradient-orange {
+    @apply bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg;
+  }
+
+  .btn-gradient-teal {
+    @apply bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg;
+  }
+
+  .text-gradient-orange {
+    background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .admin-nav-active {
+    @apply bg-orange-50 text-orange-600 border border-orange-200 shadow-sm;
+  }
+
+  .admin-nav-inactive {
+    @apply text-gray-700 hover:bg-gray-50 hover:text-gray-900;
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .safe-area-inset-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-area-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
