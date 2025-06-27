@@ -103,8 +103,8 @@ export default function ContactSection() {
 
               <div className="bg-orange-500/10 border border-orange-500/20 rounded-xl p-6">
                 <h4 className="font-bold text-gray-900 mb-2">📞 연락처</h4>
-                <p className="text-gray-700 mb-2">이메일: contact@yjlab.co.kr</p>
-                <p className="text-gray-700 mb-2">전화: +82-10-0000-0000</p>
+                <p className="text-gray-700 mb-2">이메일: help.yjlab@gmail.com</p>
+                <p className="text-gray-700 mb-2">전화: 82-10-6739-5570</p>
                 <p className="text-sm text-gray-600">평일 09:00-18:00 (토/일/공휴일 휴무)</p>
               </div>
             </div>
