@@ -82,7 +82,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6">
-              YJLAB은 <span className="text-orange-500">이상한 방식으로</span><br />
+              YJLAB은 <span className="text-orange-500">가장 확실한 방법으로</span><br />
               결과를 만들어냅니다
             </h2>
           </div>
